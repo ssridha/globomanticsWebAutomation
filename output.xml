@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-11-07T10:53:11.422081" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Conference" source="C:\Development\Pytest\globomanticsAutomation\tests\test_conference.robot">
+<test id="s1-t1" name="Scenario: Verify Conference Page Navigation" line="17">
+<kw name="open the browser with the url" owner="generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:11.857079" level="INFO">Opening browser 'chrome' to base url 'http://localhost:1337'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:53:11.857079" elapsed="7.125186"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-07T10:53:18.985451" elapsed="1.979998"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:53:11.857079" elapsed="9.108370"/>
+</kw>
+<kw name="Given the Landing Page is open" owner="landing_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:20.976460" level="INFO">Opening url 'http://localhost:1337'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:53:20.965449" elapsed="0.378587"/>
+</kw>
+<doc>Open the main landing page of the application.</doc>
+<status status="PASS" start="2024-11-07T10:53:20.965449" elapsed="0.378587"/>
+</kw>
+<kw name="When I navigate to the Conference Page" owner="landing_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:21.345157" level="INFO">Clicking element 'xpath://div[@id='navbarSupportedContent']//ul[@class='navbar-nav mr-auto']//a[@class="nav-link" and @href="/conference"]'.</msg>
+<arg>${CONFERENCE_NAV_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:21.345157" elapsed="0.139910"/>
+</kw>
+<doc>Navigate to the Conference page from the landing page.</doc>
+<status status="PASS" start="2024-11-07T10:53:21.344036" elapsed="0.141031"/>
+</kw>
+<kw name="Then the Conference Page should be displayed" owner="conference_page">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:21.513283" level="INFO">Current location is 'http://localhost:1337/conference'.</msg>
+<arg>${BASE_URL}/conference</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:53:21.495419" elapsed="0.017864"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:21.548534" level="INFO">Current page contains element 'link:View Speakers'.</msg>
+<arg>${VIEW_SPEAKERS_LINK}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-11-07T10:53:21.513283" elapsed="0.035251"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:21.561106" level="INFO">Current page contains element 'link:View Sessions'.</msg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-11-07T10:53:21.549625" elapsed="0.016369"/>
+</kw>
+<doc>Verify that the Conference page is displayed.</doc>
+<status status="PASS" start="2024-11-07T10:53:21.495419" elapsed="0.070575"/>
+</kw>
+<kw name="Close Browser session" owner="generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-07T10:53:21.565994" elapsed="2.403255"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:53:21.565994" elapsed="2.405235"/>
+</kw>
+<doc>As a user, I want to navigate to the Conference page and view its sections.</doc>
+<status status="PASS" start="2024-11-07T10:53:11.857079" elapsed="12.115048"/>
+</test>
+<test id="s1-t2" name="Scenario: Filter the sessions with the given days" line="24">
+<kw name="open the browser with the url" owner="generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:23.979007" level="INFO">Opening browser 'chrome' to base url 'http://localhost:1337'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:53:23.978465" elapsed="5.335670"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-07T10:53:29.314135" elapsed="0.155561"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:53:23.977205" elapsed="5.492491"/>
+</kw>
+<kw name="Filter Sessions By Day Template">
+<kw name="Given the Landing Page is open" owner="landing_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:29.475778" level="INFO">Opening url 'http://localhost:1337'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:53:29.474923" elapsed="0.689293"/>
+</kw>
+<doc>Open the main landing page of the application.</doc>
+<status status="PASS" start="2024-11-07T10:53:29.474923" elapsed="0.689293"/>
+</kw>
+<kw name="When I navigate to the Conference Page" owner="landing_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:30.164727" level="INFO">Clicking element 'xpath://div[@id='navbarSupportedContent']//ul[@class='navbar-nav mr-auto']//a[@class="nav-link" and @href="/conference"]'.</msg>
+<arg>${CONFERENCE_NAV_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:30.164727" elapsed="0.398429"/>
+</kw>
+<doc>Navigate to the Conference page from the landing page.</doc>
+<status status="PASS" start="2024-11-07T10:53:30.164727" elapsed="0.401438"/>
+</kw>
+<kw name="And I click speaker or session link" owner="conference_page">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:30.568203" level="INFO">Clicking element 'link:View Sessions'.</msg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:30.568203" elapsed="0.358575"/>
+</kw>
+<arg>'${link_name}' == 'View Speakers'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SPEAKERS_LINK}</arg>
+<arg>ELSE IF</arg>
+<arg>'${link_name}' == 'View Sessions'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Invalid link name provided: ${link_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-07T10:53:30.566165" elapsed="0.360613"/>
+</kw>
+<arg>View Sessions</arg>
+<doc>Click on a link on the Conference page based on the provided link name (e.g., "View Speakers" or "View Sessions").</doc>
+<status status="PASS" start="2024-11-07T10:53:30.566165" elapsed="0.360613"/>
+</kw>
+<kw name="And I filter sessions by day" owner="sessions_page">
+<kw name="Replace String" owner="String">
+<msg time="2024-11-07T10:53:30.931285" level="INFO">${dynamic_filter_path} = xpath://button[contains(., 'Thursday')]</msg>
+<var>${dynamic_filter_path}</var>
+<arg>${SESSION_FILTER_BUTTON_BASE}</arg>
+<arg>{day}</arg>
+<arg>${day}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-07T10:53:30.926778" elapsed="0.004507"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T10:53:33.935699" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T10:53:30.931285" elapsed="3.004414"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:33.935699" level="INFO">Clicking element 'xpath://button[contains(., 'Thursday')]'.</msg>
+<arg>${dynamic_filter_path}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:33.935699" elapsed="0.067981"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T10:53:37.004158" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T10:53:34.003680" elapsed="3.000478"/>
+</kw>
+<arg>${day}</arg>
+<doc>This filters out the sessions based on the day provided</doc>
+<status status="PASS" start="2024-11-07T10:53:30.926778" elapsed="6.077380"/>
+</kw>
+<kw name="Then I should see only ${day} sessions" owner="sessions_page" source_name="I should see only ${day} sessions">
+<kw name="Replace String" owner="String">
+<msg time="2024-11-07T10:53:37.005385" level="INFO">${session_locator} = xpath://h5[@data-cy="day" and contains(text(), 'Day: Thursday')]</msg>
+<var>${session_locator}</var>
+<arg>${SESSION_DAY_LOCATOR_BASE}</arg>
+<arg>{day}</arg>
+<arg>${day}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-07T10:53:37.005385" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:37.036531" level="INFO">${session_count} = 91</msg>
+<var>${session_count}</var>
+<arg>${session_locator}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:37.005385" elapsed="0.031146"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${session_count} &gt; 0</arg>
+<arg>No sessions found for ${day}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-11-07T10:53:37.036531" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:37.036531" level="FAIL">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</msg>
+<arg>${session_locator}[${index} + 1}]</arg>
+<arg>Day: ${day}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2024-11-07T10:53:37.036531" elapsed="0.000000">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</status>
+</kw>
+<var name="${index}">0</var>
+<status status="FAIL" start="2024-11-07T10:53:37.036531" elapsed="0.000000">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</status>
+</iter>
+<var>${index}</var>
+<value>${session_count}</value>
+<status status="FAIL" start="2024-11-07T10:53:37.036531" elapsed="0.000000">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</status>
+</for>
+<arg>${day}</arg>
+<doc>Verify that all displayed sessions are only for the specified Thursday.</doc>
+<status status="FAIL" start="2024-11-07T10:53:37.004664" elapsed="0.031867">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</status>
+</kw>
+<arg>Thursday</arg>
+<doc>This template filters sessions based on the day provided as test data.</doc>
+<status status="FAIL" start="2024-11-07T10:53:29.474156" elapsed="7.562375">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</status>
+</kw>
+<kw name="Filter Sessions By Day Template">
+<kw name="Given the Landing Page is open" owner="landing_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:37.040470" level="INFO">Opening url 'http://localhost:1337'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:53:37.040470" elapsed="0.063872"/>
+</kw>
+<doc>Open the main landing page of the application.</doc>
+<status status="PASS" start="2024-11-07T10:53:37.036531" elapsed="0.067811"/>
+</kw>
+<kw name="When I navigate to the Conference Page" owner="landing_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:37.105348" level="INFO">Clicking element 'xpath://div[@id='navbarSupportedContent']//ul[@class='navbar-nav mr-auto']//a[@class="nav-link" and @href="/conference"]'.</msg>
+<arg>${CONFERENCE_NAV_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:37.105348" elapsed="1.075490"/>
+</kw>
+<doc>Navigate to the Conference page from the landing page.</doc>
+<status status="PASS" start="2024-11-07T10:53:37.104342" elapsed="1.076496"/>
+</kw>
+<kw name="And I click speaker or session link" owner="conference_page">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:38.180838" level="INFO">Clicking element 'link:View Sessions'.</msg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:38.180838" elapsed="0.073799"/>
+</kw>
+<arg>'${link_name}' == 'View Speakers'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SPEAKERS_LINK}</arg>
+<arg>ELSE IF</arg>
+<arg>'${link_name}' == 'View Sessions'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Invalid link name provided: ${link_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-07T10:53:38.180838" elapsed="0.073799"/>
+</kw>
+<arg>View Sessions</arg>
+<doc>Click on a link on the Conference page based on the provided link name (e.g., "View Speakers" or "View Sessions").</doc>
+<status status="PASS" start="2024-11-07T10:53:38.180838" elapsed="0.073799"/>
+</kw>
+<kw name="And I filter sessions by day" owner="sessions_page">
+<kw name="Replace String" owner="String">
+<msg time="2024-11-07T10:53:38.255840" level="INFO">${dynamic_filter_path} = xpath://button[contains(., 'Friday')]</msg>
+<var>${dynamic_filter_path}</var>
+<arg>${SESSION_FILTER_BUTTON_BASE}</arg>
+<arg>{day}</arg>
+<arg>${day}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-07T10:53:38.255840" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T10:53:41.256324" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T10:53:38.255840" elapsed="3.000484"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:41.256324" level="INFO">Clicking element 'xpath://button[contains(., 'Friday')]'.</msg>
+<arg>${dynamic_filter_path}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:41.256324" elapsed="0.098291"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T10:53:44.354789" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T10:53:41.354615" elapsed="3.000174"/>
+</kw>
+<arg>${day}</arg>
+<doc>This filters out the sessions based on the day provided</doc>
+<status status="PASS" start="2024-11-07T10:53:38.254637" elapsed="6.100152"/>
+</kw>
+<kw name="Then I should see only ${day} sessions" owner="sessions_page" source_name="I should see only ${day} sessions">
+<kw name="Replace String" owner="String">
+<msg time="2024-11-07T10:53:44.355796" level="INFO">${session_locator} = xpath://h5[@data-cy="day" and contains(text(), 'Day: Friday')]</msg>
+<var>${session_locator}</var>
+<arg>${SESSION_DAY_LOCATOR_BASE}</arg>
+<arg>{day}</arg>
+<arg>${day}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-07T10:53:44.355796" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:44.371432" level="INFO">${session_count} = 91</msg>
+<var>${session_count}</var>
+<arg>${session_locator}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:44.355796" elapsed="0.015636"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${session_count} &gt; 0</arg>
+<arg>No sessions found for ${day}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-11-07T10:53:44.371432" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:44.380430" level="FAIL">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</msg>
+<arg>${session_locator}[${index} + 1}]</arg>
+<arg>Day: ${day}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2024-11-07T10:53:44.380430" elapsed="0.000000">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</status>
+</kw>
+<var name="${index}">0</var>
+<status status="FAIL" start="2024-11-07T10:53:44.380430" elapsed="0.000000">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</status>
+</iter>
+<var>${index}</var>
+<value>${session_count}</value>
+<status status="FAIL" start="2024-11-07T10:53:44.380430" elapsed="0.000000">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</status>
+</for>
+<arg>${day}</arg>
+<doc>Verify that all displayed sessions are only for the specified Friday.</doc>
+<status status="FAIL" start="2024-11-07T10:53:44.354789" elapsed="0.025641">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</status>
+</kw>
+<arg>Friday</arg>
+<doc>This template filters sessions based on the day provided as test data.</doc>
+<status status="FAIL" start="2024-11-07T10:53:37.036531" elapsed="7.343899">String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</status>
+</kw>
+<kw name="Close Browser session" owner="generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-07T10:53:44.380430" elapsed="4.100506"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:53:44.380430" elapsed="4.100506"/>
+</kw>
+<status status="FAIL" start="2024-11-07T10:53:23.975516" elapsed="24.505420">Several failures occurred:
+
+1) String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.
+
+2) String '${session_locator}' used with invalid index '0 + 1}'. To use '[0 + 1}]' as a literal value, it needs to be escaped like '\[0 + 1}]'.</status>
+</test>
+<test id="s1-t3" name="Scenario: Verify Submit Session Form Submission" line="30">
+<kw name="open the browser with the url" owner="generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:48.480936" level="INFO">Opening browser 'chrome' to base url 'http://localhost:1337'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:53:48.480936" elapsed="2.990515"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-07T10:53:51.471451" elapsed="0.166451"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:53:48.480936" elapsed="3.156966"/>
+</kw>
+<kw name="Given the Landing Page is open" owner="landing_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:51.666511" level="INFO">Opening url 'http://localhost:1337'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:53:51.666006" elapsed="0.342009"/>
+</kw>
+<doc>Open the main landing page of the application.</doc>
+<status status="PASS" start="2024-11-07T10:53:51.666006" elapsed="0.342009"/>
+</kw>
+<kw name="When I navigate to the Conference Page" owner="landing_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:52.008015" level="INFO">Clicking element 'xpath://div[@id='navbarSupportedContent']//ul[@class='navbar-nav mr-auto']//a[@class="nav-link" and @href="/conference"]'.</msg>
+<arg>${CONFERENCE_NAV_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:52.008015" elapsed="0.090845"/>
+</kw>
+<doc>Navigate to the Conference page from the landing page.</doc>
+<status status="PASS" start="2024-11-07T10:53:52.008015" elapsed="0.090845"/>
+</kw>
+<kw name="And I click speaker or session link" owner="conference_page">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:52.114126" level="INFO">Clicking element 'link:View Sessions'.</msg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:52.114126" elapsed="0.106564"/>
+</kw>
+<arg>'${link_name}' == 'View Speakers'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SPEAKERS_LINK}</arg>
+<arg>ELSE IF</arg>
+<arg>'${link_name}' == 'View Sessions'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Invalid link name provided: ${link_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-07T10:53:52.114126" elapsed="0.106564"/>
+</kw>
+<arg>View Sessions</arg>
+<doc>Click on a link on the Conference page based on the provided link name (e.g., "View Speakers" or "View Sessions").</doc>
+<status status="PASS" start="2024-11-07T10:53:52.114126" elapsed="0.106564"/>
+</kw>
+<kw name="And I click Submit a Session" owner="sessions_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:52.231394" level="INFO">Clicking element 'link:Submit a Session!'.</msg>
+<arg>${SUBMIT_SESSION_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:52.230356" elapsed="0.104804"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T10:53:55.335241" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T10:53:52.335160" elapsed="3.000081"/>
+</kw>
+<doc>Click on "Submit a Session" link to navigate to the Submit Session form.</doc>
+<status status="PASS" start="2024-11-07T10:53:52.230356" elapsed="3.104885"/>
+</kw>
+<kw name="And I fill the Submit Session form with details" owner="submit_session_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:55.335241" level="INFO">Typing text 'Discover Robot' into text field 'id:inputTitle'.</msg>
+<arg>${TITLE_FIELD}</arg>
+<arg>${title}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:55.335241" elapsed="0.133502"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:55.468743" level="INFO">Typing text 'Robot Session' into text field 'id:inputDescription'.</msg>
+<arg>${DESCRIPTION_FIELD}</arg>
+<arg>${description}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:55.468743" elapsed="0.121850"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:55.591778" level="INFO">Typing text 'Friday' into text field 'id:inputDay'.</msg>
+<arg>${DAY_FIELD}</arg>
+<arg>${day}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:55.591778" elapsed="0.109387"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:55.701165" level="INFO">Typing text 'Beginner' into text field 'id:inputLevel'.</msg>
+<arg>${LEVEL_FIELD}</arg>
+<arg>${level}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:55.701165" elapsed="0.098791"/>
+</kw>
+<arg>Discover Robot</arg>
+<arg>Robot Session</arg>
+<arg>Friday</arg>
+<arg>Beginner</arg>
+<doc>Fill out the Submit Session form with the provided details.</doc>
+<status status="PASS" start="2024-11-07T10:53:55.335241" elapsed="0.466123"/>
+</kw>
+<kw name="Then I click Submit" owner="submit_session_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T10:53:56.801935" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T10:53:55.801364" elapsed="1.000571"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:56.802810" level="INFO">Clicking element 'xpath://button[contains(.,'Submit')]'.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:56.801935" elapsed="0.084549"/>
+</kw>
+<doc>Click on the Submit button to submit the session form.</doc>
+<status status="PASS" start="2024-11-07T10:53:55.801364" elapsed="1.085120"/>
+</kw>
+<kw name="And I should see success message" owner="submit_session_page">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:56.910214" level="INFO">Current page contains text 'Session Submitted Successfully!'.</msg>
+<arg>Session Submitted Successfully!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-11-07T10:53:56.887634" elapsed="0.022580"/>
+</kw>
+<doc>Verify that the success message "Session Submitted Successfully!" is displayed.</doc>
+<status status="PASS" start="2024-11-07T10:53:56.887634" elapsed="0.022580"/>
+</kw>
+<kw name="When I navigate to the Conference Page" owner="landing_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:56.915723" level="INFO">Clicking element 'xpath://div[@id='navbarSupportedContent']//ul[@class='navbar-nav mr-auto']//a[@class="nav-link" and @href="/conference"]'.</msg>
+<arg>${CONFERENCE_NAV_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:56.915723" elapsed="0.069367"/>
+</kw>
+<doc>Navigate to the Conference page from the landing page.</doc>
+<status status="PASS" start="2024-11-07T10:53:56.915723" elapsed="0.072375"/>
+</kw>
+<kw name="And I click speaker or session link" owner="conference_page">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:53:56.993197" level="INFO">Clicking element 'link:View Sessions'.</msg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:53:56.992614" elapsed="0.104565"/>
+</kw>
+<arg>'${link_name}' == 'View Speakers'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SPEAKERS_LINK}</arg>
+<arg>ELSE IF</arg>
+<arg>'${link_name}' == 'View Sessions'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Invalid link name provided: ${link_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-07T10:53:56.989997" elapsed="0.107182"/>
+</kw>
+<arg>View Sessions</arg>
+<doc>Click on a link on the Conference page based on the provided link name (e.g., "View Speakers" or "View Sessions").</doc>
+<status status="PASS" start="2024-11-07T10:53:56.989997" elapsed="0.107182"/>
+</kw>
+<kw name="And I should see session with title" owner="sessions_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T10:54:00.103272" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T10:53:57.102733" elapsed="3.000539"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-11-07T10:54:00.103800" level="INFO">${session_locator} = xpath://h3[contains(text(), 'Discover Robot')]</msg>
+<var>${session_locator}</var>
+<arg>${SESSION_TITLE_LOCATOR_TEMPLATE}</arg>
+<arg>{title}</arg>
+<arg>${title}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-07T10:54:00.103272" elapsed="0.000528"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:05.346661" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-11-07T10:54:05.351600" level="FAIL">Element 'xpath://h3[contains(text(), 'Discover Robot')]' not visible after 5 seconds.</msg>
+<arg>${session_locator}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-11-07T10:54:00.103800" elapsed="5.339793">Element 'xpath://h3[contains(text(), 'Discover Robot')]' not visible after 5 seconds.</status>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${session_locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-11-07T10:54:05.443593" elapsed="0.000000"/>
+</kw>
+<arg>Discover Robot</arg>
+<doc>Verify that a session with the specified title is displayed on the View Sessions page.</doc>
+<status status="FAIL" start="2024-11-07T10:53:57.102733" elapsed="8.340860">Element 'xpath://h3[contains(text(), 'Discover Robot')]' not visible after 5 seconds.</status>
+</kw>
+<kw name="Close Browser session" owner="generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-07T10:54:05.448345" elapsed="2.407344"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:54:05.448345" elapsed="2.407344"/>
+</kw>
+<doc>As a user, I want to submit a new session from the Submit a Session form.</doc>
+<status status="FAIL" start="2024-11-07T10:53:48.480936" elapsed="19.374753">Element 'xpath://h3[contains(text(), 'Discover Robot')]' not visible after 5 seconds.</status>
+</test>
+<test id="s1-t4" name="Scenario: Verify Validation for Mandatory Fields in Submit Session Form" line="43">
+<kw name="open the browser with the url" owner="generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:07.855689" level="INFO">Opening browser 'chrome' to base url 'http://localhost:1337'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:54:07.855689" elapsed="3.613512"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-07T10:54:11.470207" elapsed="0.309929"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:54:07.855689" elapsed="3.924953"/>
+</kw>
+<kw name="Given the Landing Page is open" owner="landing_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:11.812232" level="INFO">Opening url 'http://localhost:1337'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:54:11.812232" elapsed="0.025210"/>
+</kw>
+<doc>Open the main landing page of the application.</doc>
+<status status="PASS" start="2024-11-07T10:54:11.811085" elapsed="0.026863"/>
+</kw>
+<kw name="When I navigate to the Conference Page" owner="landing_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:11.859526" level="INFO">Clicking element 'xpath://div[@id='navbarSupportedContent']//ul[@class='navbar-nav mr-auto']//a[@class="nav-link" and @href="/conference"]'.</msg>
+<arg>${CONFERENCE_NAV_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:11.859526" elapsed="0.390052"/>
+</kw>
+<doc>Navigate to the Conference page from the landing page.</doc>
+<status status="PASS" start="2024-11-07T10:54:11.858892" elapsed="0.390686"/>
+</kw>
+<kw name="And I click speaker or session link" owner="conference_page">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:12.283183" level="INFO">Clicking element 'link:View Sessions'.</msg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:12.281897" elapsed="0.202458"/>
+</kw>
+<arg>'${link_name}' == 'View Speakers'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SPEAKERS_LINK}</arg>
+<arg>ELSE IF</arg>
+<arg>'${link_name}' == 'View Sessions'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Invalid link name provided: ${link_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-07T10:54:12.280888" elapsed="0.203467"/>
+</kw>
+<arg>View Sessions</arg>
+<doc>Click on a link on the Conference page based on the provided link name (e.g., "View Speakers" or "View Sessions").</doc>
+<status status="PASS" start="2024-11-07T10:54:12.279472" elapsed="0.204883"/>
+</kw>
+<kw name="And I click Submit a Session" owner="sessions_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:12.492836" level="INFO">Clicking element 'link:Submit a Session!'.</msg>
+<arg>${SUBMIT_SESSION_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:12.492836" elapsed="0.145134"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T10:54:15.638983" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T10:54:12.638752" elapsed="3.000231"/>
+</kw>
+<doc>Click on "Submit a Session" link to navigate to the Submit Session form.</doc>
+<status status="PASS" start="2024-11-07T10:54:12.492836" elapsed="3.146147"/>
+</kw>
+<kw name="And I click Submit" owner="submit_session_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T10:54:16.643749" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T10:54:15.642654" elapsed="1.001095"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:16.643749" level="INFO">Clicking element 'xpath://button[contains(.,'Submit')]'.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:16.643749" elapsed="0.179992"/>
+</kw>
+<doc>Click on the Submit button to submit the session form.</doc>
+<status status="PASS" start="2024-11-07T10:54:15.638983" elapsed="1.184941"/>
+</kw>
+<kw name="Then I should see validation messages for mandatory fields" owner="submit_session_page">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-07T10:54:17.826266" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-07T10:54:16.825940" elapsed="1.000326"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-11-07T10:54:17.826266" level="INFO">${title_id} = inputTitle</msg>
+<var>${title_id}</var>
+<arg>${TITLE_FIELD}</arg>
+<arg>id:</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-07T10:54:17.826266" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:17.837787" level="INFO">Executing JavaScript:
+return document.getElementById("inputTitle").validationMessage;
+Without any arguments.</msg>
+<msg time="2024-11-07T10:54:17.853484" level="INFO">${title_validation} = Please fill out this field.</msg>
+<var>${title_validation}</var>
+<arg>${VALIDATION_MESSAGE.replace("{id}", "${title_id}")}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-11-07T10:54:17.826266" elapsed="0.027218"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title_validation}</arg>
+<arg>Please fill out this field.</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-07T10:54:17.853484" elapsed="0.000000"/>
+</kw>
+<doc>Verify that validation messages are displayed for Title, Description, Day, and Level fields.</doc>
+<status status="PASS" start="2024-11-07T10:54:16.823924" elapsed="1.033582"/>
+</kw>
+<kw name="Close Browser session" owner="generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-07T10:54:17.857506" elapsed="2.342862"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:54:17.857506" elapsed="2.342862"/>
+</kw>
+<doc>As a user, I want to verify that all mandatory fields in the Submit Session form have validation messages if left empty.</doc>
+<status status="PASS" start="2024-11-07T10:54:07.855689" elapsed="12.344679"/>
+</test>
+<test id="s1-t5" name="Scenario: Verify All Speakers Has Featured Speaker Button" line="52">
+<kw name="open the browser with the url" owner="generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:20.200368" level="INFO">Opening browser 'chrome' to base url 'http://localhost:1337'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:54:20.200368" elapsed="2.663165"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-07T10:54:22.863533" elapsed="0.151355"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:54:20.200368" elapsed="2.814520"/>
+</kw>
+<kw name="Given the Landing Page is open" owner="landing_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:23.025736" level="INFO">Opening url 'http://localhost:1337'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:54:23.023055" elapsed="0.370064"/>
+</kw>
+<doc>Open the main landing page of the application.</doc>
+<status status="PASS" start="2024-11-07T10:54:23.023055" elapsed="0.370064"/>
+</kw>
+<kw name="When I navigate to the Conference Page" owner="landing_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:23.405791" level="INFO">Clicking element 'xpath://div[@id='navbarSupportedContent']//ul[@class='navbar-nav mr-auto']//a[@class="nav-link" and @href="/conference"]'.</msg>
+<arg>${CONFERENCE_NAV_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:23.405791" elapsed="0.104493"/>
+</kw>
+<doc>Navigate to the Conference page from the landing page.</doc>
+<status status="PASS" start="2024-11-07T10:54:23.405791" elapsed="0.104493"/>
+</kw>
+<kw name="And I click speaker or session link" owner="conference_page">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:23.530659" level="INFO">Clicking element 'link:View Speakers'.</msg>
+<arg>${VIEW_SPEAKERS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:23.530659" elapsed="0.187739"/>
+</kw>
+<arg>'${link_name}' == 'View Speakers'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SPEAKERS_LINK}</arg>
+<arg>ELSE IF</arg>
+<arg>'${link_name}' == 'View Sessions'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Invalid link name provided: ${link_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-07T10:54:23.530659" elapsed="0.187739"/>
+</kw>
+<arg>View Speakers</arg>
+<doc>Click on a link on the Conference page based on the provided link name (e.g., "View Speakers" or "View Sessions").</doc>
+<status status="PASS" start="2024-11-07T10:54:23.529634" elapsed="0.188764"/>
+</kw>
+<kw name="Then I should see a Featured Badge for all the speakers" owner="speakers_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SPEAKER_CARD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-07T10:54:23.723603" elapsed="0.570628"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:24.321598" level="INFO">${speaker_count} = 162</msg>
+<var>${speaker_count}</var>
+<arg>${SPEAKER_CARD}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:24.294231" elapsed="0.027367"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:24.337359" level="INFO">${badge_count} = 162</msg>
+<var>${badge_count}</var>
+<arg>${FEATURED_SPEAKER_BUTTON}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:24.321598" elapsed="0.015761"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${speaker_count}</arg>
+<arg>${badge_count}</arg>
+<arg>Each speaker should have a Featured Speaker button</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-11-07T10:54:24.337359" elapsed="0.000000"/>
+</kw>
+<doc>Verify that each speaker entry has a Featured Speaker button.</doc>
+<status status="PASS" start="2024-11-07T10:54:23.723603" elapsed="0.613756"/>
+</kw>
+<kw name="Close Browser session" owner="generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-07T10:54:24.337359" elapsed="2.369287"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:54:24.337359" elapsed="2.369287"/>
+</kw>
+<doc>As a user, I want to view featured speakers with a badge on the Speakers page for all the speakers</doc>
+<status status="PASS" start="2024-11-07T10:54:20.200368" elapsed="6.506278"/>
+</test>
+<test id="s1-t6" name="Scenario: Verify Featured Speaker Button Can Be Toggled" line="60">
+<kw name="open the browser with the url" owner="generic" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:26.710069" level="INFO">Opening browser 'chrome' to base url 'http://localhost:1337'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:54:26.710069" elapsed="2.757420"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-07T10:54:29.467489" elapsed="0.148088"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:54:26.710069" elapsed="2.905508"/>
+</kw>
+<kw name="Given the Landing Page is open" owner="landing_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:29.616148" level="INFO">Opening url 'http://localhost:1337'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-07T10:54:29.616148" elapsed="0.204936"/>
+</kw>
+<doc>Open the main landing page of the application.</doc>
+<status status="PASS" start="2024-11-07T10:54:29.616148" elapsed="0.204936"/>
+</kw>
+<kw name="When I navigate to the Conference Page" owner="landing_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:29.823505" level="INFO">Clicking element 'xpath://div[@id='navbarSupportedContent']//ul[@class='navbar-nav mr-auto']//a[@class="nav-link" and @href="/conference"]'.</msg>
+<arg>${CONFERENCE_NAV_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:29.823505" elapsed="0.112218"/>
+</kw>
+<doc>Navigate to the Conference page from the landing page.</doc>
+<status status="PASS" start="2024-11-07T10:54:29.821084" elapsed="0.114639"/>
+</kw>
+<kw name="And I click speaker or session link" owner="conference_page">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:29.955745" level="INFO">Clicking element 'link:View Speakers'.</msg>
+<arg>${VIEW_SPEAKERS_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:29.955745" elapsed="0.241926"/>
+</kw>
+<arg>'${link_name}' == 'View Speakers'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SPEAKERS_LINK}</arg>
+<arg>ELSE IF</arg>
+<arg>'${link_name}' == 'View Sessions'</arg>
+<arg>Click Element</arg>
+<arg>${VIEW_SESSIONS_LINK}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Invalid link name provided: ${link_name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-07T10:54:29.955745" elapsed="0.241926"/>
+</kw>
+<arg>View Speakers</arg>
+<doc>Click on a link on the Conference page based on the provided link name (e.g., "View Speakers" or "View Sessions").</doc>
+<status status="PASS" start="2024-11-07T10:54:29.955745" elapsed="0.241926"/>
+</kw>
+<kw name="Then I should toggle the Featured speaker button" owner="speakers_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SPEAKER_CARD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-07T10:54:30.200177" elapsed="0.306973"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:30.536214" level="INFO">${initial_style} = color: gold;</msg>
+<var>${initial_style}</var>
+<arg>${FEATURED_SPEAKER_BUTTON}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:30.507150" elapsed="0.029064"/>
+</kw>
+<if>
+<branch type="IF" condition="'${ENABLED_STYLE}' in '${initial_style}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-07T10:54:30.540193" level="INFO">${initial_state} = enabled</msg>
+<var>${initial_state}</var>
+<arg>enabled</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-07T10:54:30.538938" elapsed="0.001255"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:54:30.537727" elapsed="0.002466"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${initial_state}</var>
+<arg>disabled</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2024-11-07T10:54:30.541570" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-11-07T10:54:30.541570" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-11-07T10:54:30.537727" elapsed="0.003843"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-07T10:54:30.541570" level="INFO">Initial state: enabled</msg>
+<arg>Initial state: ${initial_state}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-07T10:54:30.541570" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:30.541570" level="INFO">Clicking element 'xpath://button[contains(., 'Featured Speaker')]/i'.</msg>
+<arg>${FEATURED_SPEAKER_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:30.541570" elapsed="0.092647"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-11-07T10:54:30.708750" level="INFO">${new_style} = color: gold;</msg>
+<var>${new_style}</var>
+<arg>${FEATURED_SPEAKER_BUTTON}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-11-07T10:54:30.634217" elapsed="0.074533"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Should Not Contain" owner="BuiltIn">
+<msg time="2024-11-07T10:54:30.709925" level="FAIL">The button should be disabled after clicking: 'color: gold;' contains 'color: gold;'</msg>
+<arg>${new_style}</arg>
+<arg>${ENABLED_STYLE}</arg>
+<arg>The button should be disabled after clicking</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="FAIL" start="2024-11-07T10:54:30.709342" elapsed="0.001282">The button should be disabled after clicking: 'color: gold;' contains 'color: gold;'</status>
+</kw>
+<arg>'${initial_state}' == 'enabled'</arg>
+<arg>Should Not Contain</arg>
+<arg>${new_style}</arg>
+<arg>${ENABLED_STYLE}</arg>
+<arg>The button should be disabled after clicking</arg>
+<arg>ELSE</arg>
+<arg>Should Contain</arg>
+<arg>${new_style}</arg>
+<arg>${ENABLED_STYLE}</arg>
+<arg>The button should be enabled after clicking</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2024-11-07T10:54:30.709342" elapsed="0.001282">The button should be disabled after clicking: 'color: gold;' contains 'color: gold;'</status>
+</kw>
+<doc>Verify that the Featured Speaker button can be toggled between enabled and disabled states.</doc>
+<status status="FAIL" start="2024-11-07T10:54:30.200177" elapsed="0.510447">The button should be disabled after clicking: 'color: gold;' contains 'color: gold;'</status>
+</kw>
+<kw name="Close Browser session" owner="generic" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-07T10:54:30.711294" elapsed="2.688876"/>
+</kw>
+<status status="PASS" start="2024-11-07T10:54:30.711294" elapsed="2.688876"/>
+</kw>
+<doc>As a user, I want to toggle the Featured Speaker button enable and disable</doc>
+<status status="FAIL" start="2024-11-07T10:54:26.710069" elapsed="6.690101">The button should be disabled after clicking: 'color: gold;' contains 'color: gold;'</status>
+</test>
+<doc>Validate conference functionality in Globomantics test application</doc>
+<status status="FAIL" start="2024-11-07T10:53:11.428697" elapsed="81.986490"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="3" skip="0" id="s1" name="Test Conference">Test Conference</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-11-07T10:53:11.773333" level="ERROR">Error in file 'C:\Development\Pytest\globomanticsAutomation\pageObjects\generic.robot' on line 7: Resource file 'variables\variables.robot' does not exist.</msg>
+</errors>
+</robot>
